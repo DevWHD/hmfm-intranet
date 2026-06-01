@@ -40,7 +40,8 @@ function App() {
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
         <ContentProvider>
-          <WouterRouter base={import.meta.env.BASE_URL.replace(/\/$/, "")}>
+          <WouterRouter base={import.meta.env.BASE_URL.replace(/\/$/, "") || ""}>
+
             <Switch>
               <Route path="/admin" component={Admin} />
               <Route component={SiteRoutes} />
